@@ -1,0 +1,32 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/applications/APP1",
+      "responses": [
+        {
+          "body": {
+            "application": "APP1",
+            "applicationRevision": 1,
+            "holders": [
+              {
+                "id": "H1",
+                "share": 100
+              }
+            ],
+            "representative": "R1",
+            "materials": [
+              {
+                "id": "M1",
+                "holder": "H1",
+                "revision": 1
+              }
+            ],
+            "draft": "D1",
+            "acceptedReceipt": "ACK1"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "transfer-filing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0 <23"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "source": "node src/fixture.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "demo": "node scripts/demo.mjs"
+  }
+}
