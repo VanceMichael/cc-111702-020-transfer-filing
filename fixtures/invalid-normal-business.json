@@ -1,0 +1,37 @@
+[
+  {
+    "name": "申请不符",
+    "changes": {
+      "application": "APP2"
+    }
+  },
+  {
+    "name": "份额不足",
+    "changes": {
+      "holders": [
+        {
+          "id": "H1",
+          "share": 90
+        }
+      ]
+    }
+  },
+  {
+    "name": "资料归属不符",
+    "changes": {
+      "materials": [
+        {
+          "id": "M1",
+          "holder": "H2",
+          "revision": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "代表缺失",
+    "changes": {
+      "representative": ""
+    }
+  }
+]
