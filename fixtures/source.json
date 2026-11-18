@@ -27,6 +27,42 @@
           }
         }
       ]
+    },
+    {
+      "method": "POST",
+      "path": "/confirmations",
+      "responses": [
+        {
+          "body": {
+            "confirmation": "CF1",
+            "application": "APP1",
+            "holder": "H1",
+            "seenRevision": 1,
+            "confirmed": true
+          }
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/portal/drafts/D1",
+      "responses": [
+        {
+          "body": {
+            "draft": "D1",
+            "canOperate": true,
+            "ownerApplication": "APP1",
+            "attachments": [
+              {
+                "id": "M1",
+                "holder": "H1",
+                "revision": 1
+              }
+            ],
+            "acceptedReceipt": "ACK1"
+          }
+        }
+      ]
     }
   ]
 }
