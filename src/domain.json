@@ -6,5 +6,11 @@
   "route": {
     "method": "GET",
     "path": "/applications/APP1"
-  }
+  },
+  "confirmationRoute": {
+    "method": "POST",
+    "path": "/confirmations"
+  },
+  "draftPath": "/portal/drafts/:draft",
+  "correctionPath": "/portal/drafts/:draft/corrections"
 }

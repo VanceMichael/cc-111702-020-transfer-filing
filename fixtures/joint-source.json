@@ -1,0 +1,112 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/applications/APP1",
+      "responses": [
+        {
+          "body": {
+            "application": "APP1",
+            "applicationRevision": 1,
+            "holders": [
+              { "id": "H1", "share": 40 },
+              { "id": "H2", "share": 35 },
+              { "id": "H3", "share": 25 }
+            ],
+            "contacts": {
+              "H1": { "name": "甲单位联系人", "phone": "010-00000001" },
+              "H2": { "name": "乙单位联系人", "phone": "010-00000002" },
+              "H3": { "name": "丙单位联系人", "phone": "010-00000003" }
+            },
+            "representative": "H1",
+            "materials": [
+              { "id": "M1", "holder": "H1", "revision": 1 },
+              { "id": "M2", "holder": "H2", "revision": 1 },
+              { "id": "M3", "holder": "H3", "revision": 1 }
+            ],
+            "draft": "D1"
+          }
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/confirmations",
+      "responses": [
+        {
+          "body": {
+            "confirmation": "CF-H1",
+            "application": "APP1",
+            "holder": "H1",
+            "seenRevision": 1,
+            "seenHolders": [
+              { "id": "H1", "share": 40 },
+              { "id": "H2", "share": 35 },
+              { "id": "H3", "share": 25 }
+            ],
+            "seenMaterials": [{ "id": "M1", "revision": 1 }],
+            "confirmed": true
+          }
+        },
+        {
+          "body": {
+            "confirmation": "CF-H2",
+            "application": "APP1",
+            "holder": "H2",
+            "seenRevision": 1,
+            "seenHolders": [
+              { "id": "H1", "share": 40 },
+              { "id": "H2", "share": 35 },
+              { "id": "H3", "share": 25 }
+            ],
+            "seenMaterials": [{ "id": "M2", "revision": 1 }],
+            "confirmed": true
+          }
+        },
+        {
+          "body": {
+            "confirmation": "CF-H3",
+            "application": "APP1",
+            "holder": "H3",
+            "seenRevision": 1,
+            "seenHolders": [
+              { "id": "H1", "share": 40 },
+              { "id": "H2", "share": 35 },
+              { "id": "H3", "share": 25 }
+            ],
+            "seenMaterials": [{ "id": "M3", "revision": 1 }],
+            "confirmed": true
+          }
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/portal/drafts/D1",
+      "responses": [
+        {
+          "body": {
+            "draft": "D1",
+            "canOperate": true,
+            "ownerApplication": "APP1",
+            "attachments": [
+              { "id": "M1", "holder": "H1", "revision": 1 },
+              { "id": "M2", "holder": "H2", "revision": 1 },
+              { "id": "M3", "holder": "H3", "revision": 1 }
+            ],
+            "acceptedReceipt": null
+          }
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/portal/drafts/D1/corrections",
+      "responses": [
+        {
+          "body": { "correction": "COR1", "draft": "D1", "application": "APP1", "accepted": true }
+        }
+      ]
+    }
+  ]
+}

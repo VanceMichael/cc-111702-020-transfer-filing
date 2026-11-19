@@ -27,6 +27,8 @@ export async function startFixture(script, port = 0) {
       if (route.requireAuthentication && !request.headers.authorization) return reply(response, 401, { error: '需要授权' });
       const index = cursors.get(key) ?? 0;
       const step = route.responses[Math.min(index, route.responses.length - 1)];
+      if (step?.accept === false) return reply(response, 409, { error: '来源不受理该确认' });
+      if (step?.accepted === false) return reply(response, 409, { error: '门户不受理该草稿' });
       if (!step) return reply(response, 410, { error: '来源响应已结束' });
       cursors.set(key, index + 1); counters.set(key, (counters.get(key) ?? 0) + 1);
       call.responseIndex = index;
